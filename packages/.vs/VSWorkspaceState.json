@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\cef.redist.x64.3.2357.1287",
+    "\\CefSharp.Common.43.0.1",
+    "\\CefSharp.WinForms.43.0.1\\build",
+    "\\CefSharp.WinForms.43.0.1\\CefSharp",
+    "\\CefSharp.WinForms.43.0.1\\CefSharp\\x64",
+    "\\CefSharp.WinForms.43.0.1\\CefSharp\\x86",
+    "\\CefSharp.WinForms.43.0.1\\lib",
+    "\\SharpCompress.0.18.2",
+    "\\SharpCompress.0.18.2\\lib"
+  ],
+  "PreviewInSolutionExplorer": false
+}
