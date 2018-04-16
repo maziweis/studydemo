@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\CefSharp.WinForms.43.0.1\build\CefSharp.WinForms.props" Condition="Exists('..\packages\CefSharp.WinForms.43.0.1\build\CefSharp.WinForms.props')" />
+  <Import Project="..\packages\CefSharp.Common.43.0.1\build\CefSharp.Common.props" Condition="Exists('..\packages\CefSharp.Common.43.0.1\build\CefSharp.Common.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B610720A-F364-43E8-AB62-E5FFB085F623}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SmarterClassroomWindows</RootNamespace>
+    <AssemblyName>SmarterClassroomWindows</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>kingsun.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CefSharp, Version=43.0.1.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\CefSharp.Common.43.0.1\CefSharp\x86\CefSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.Core, Version=43.0.1.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\CefSharp.Common.43.0.1\CefSharp\x86\CefSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.WinForms, Version=43.0.1.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\CefSharp.WinForms.43.0.1\CefSharp\x86\CefSharp.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="ESBasic">
+      <HintPath>DLL\ESBasic.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>DLL\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.PowerPoint, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>DLL\Microsoft.Office.Interop.PowerPoint.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio, Version=1.2.144.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="Office, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>DLL\Office.dll</HintPath>
+    </Reference>
+    <Reference Include="OMCS">
+      <HintPath>DLL\OMCS.dll</HintPath>
+    </Reference>
+    <Reference Include="OMCS.Boost">
+      <HintPath>DLL\OMCS.Boost.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpCompress, Version=0.18.2.0, Culture=neutral, PublicKeyToken=afb0a02973931d96, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\SharpCompress.0.18.2\lib\net45\SharpCompress.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommonLib\AudioHelper.cs" />
+    <Compile Include="CommonLib\FileRev.cs" />
+    <Compile Include="CommonLib\MsgCtrl.cs" />
+    <Compile Include="CommonLib\TransferFiles.cs" />
+    <Compile Include="CommonLib\UDPServer.cs" />
+    <Compile Include="CommonLib\Util.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonLib\Helper.cs" />
+    <Compile Include="JsEvent.cs" />
+    <Compile Include="CommonLib\MenuHandler.cs" />
+    <Compile Include="CommonLib\OperatePPT.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\catalog.json" />
+    <None Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\Course.kino" />
+    <None Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\resource\4564654.json" />
+    <None Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\resource\page002\950baed5-b7de-48dc-b00b-1a14713f6628.zip" />
+    <None Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\resource\page002\page002.json" />
+    <None Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\resource\page006\950baed5-b7de-48dc-b00b-1a14713f6628.zip" />
+    <None Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\resource\page006\page006.json" />
+    <None Include="bin\x86\Debug\Page\static\css\app.5f74a19f18baa052aec04c3648f2937e.css.map" />
+    <None Include="bin\x86\Debug\Page\static\js\app.ad87ad4fbc52441b957c.js.map" />
+    <None Include="bin\x86\Debug\Page\static\js\manifest.9f721a05171225ce1161.js.map" />
+    <None Include="bin\x86\Debug\Page\static\js\vendor.3612e57c9038e79b123c.js.map" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="resource\eval\bin\eng.pred.pydnn.16bit\eng.pred.pydnn.16bit.bin">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="resource\eval\bin\eng.pred.pydnn.16bit\eng.pred.pydnn.16bit.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="resource\eval\bin\eng.snt.pydnn.16bit\eng.snt.pydnn.16bit.bin">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="resource\eval\bin\eng.snt.pydnn.16bit\eng.snt.pydnn.16bit.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="resource\eval\bin\eng.wrd.pydnn.16bit\eng.wrd.pydnn.16bit.bin">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="resource\eval\bin\eng.wrd.pydnn.16bit\eng.wrd.pydnn.16bit.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="resource\eval\db\comb.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="resource\eval\db\common.bin">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="resource\eval\db\GIZA.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\x86\Debug\Page\crossOriginAccess.html" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\cover1.gif" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\db.js" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\fm001\bg.jpg" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\fm002\bg.jpg" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\fy001\bg.jpg" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\ml001\bg.jpg" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\ml002\bg.jpg" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\ml003\bg.jpg" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page001\bg.jpg" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page002\bg.jpg" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page002\DialogButtonConfig.xml" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page002\sound\P002001.mp3" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page002\sound\P002002.mp3" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page002\sound\P002003.mp3" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page003\bg.jpg" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page003\DialogButtonConfig.xml" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page003\sound\P003001.mp3" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page003\sound\P003002.mp3" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page003\sound\P003003.mp3" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page004\bg.jpg" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page005\bg.jpg" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page006\bg.jpg" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page006\DialogButtonConfig.xml" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page006\sound\P006001.mp3" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page006\sound\P006002.mp3" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page006\sound\P006003.mp3" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page007\bg.jpg" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page008\bg.jpg" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page008\DialogButtonConfig.xml" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page008\sound\P008001.mp3" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page008\sound\P008002.mp3" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page008\sound\P008003.mp3" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page009\bg.jpg" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page010\bg.jpg" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page010\DialogButtonConfig.xml" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page010\sound\P010001.mp3" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page010\sound\P010002.mp3" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page010\sound\P010003.mp3" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page010\sound\P010004.mp3" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page010\sound\P010005.mp3" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page010\sound\P010006.mp3" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page010\sound\P010007.mp3" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page010\sound\P010008.mp3" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page011\bg.jpg" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page011\DialogButtonConfig.xml" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page011\sound\P011001.mp3" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page011\sound\P011002.mp3" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page011\sound\P011003.mp3" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page012\bg.jpg" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page012\DialogButtonConfig.xml" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page012\sound\P012001.mp3" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page012\sound\P012002.mp3" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page012\sound\P012003.mp3" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page012\sound\P012004.mp3" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page012\sound\P012005.mp3" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page013\bg.jpg" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page014\bg.jpg" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page014\DialogButtonConfig.xml" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page014\sound\P014001.mp3" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page014\sound\P014002.mp3" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page014\sound\P014003.mp3" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page014\sound\P014004.mp3" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\zfd001\bg.jpg" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\resource\page002\9b09b50d-6efc-4c7d-95da-4dd9415db984.png" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\resource\page002\c6837bb1-ea95-4546-94b6-cb72bdd6f694.mp4" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\resource\page006\9b09b50d-6efc-4c7d-95da-4dd9415db984.png" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\resource\page006\c6837bb1-ea95-4546-94b6-cb72bdd6f694.mp4" />
+    <Content Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\resource\re.txt" />
+    <Content Include="bin\x86\Debug\Page\index.html" />
+    <Content Include="bin\x86\Debug\Page\static\css\app.5f74a19f18baa052aec04c3648f2937e.css" />
+    <Content Include="bin\x86\Debug\Page\static\img\BTX.73def7e.gif" />
+    <Content Include="bin\x86\Debug\Page\static\img\CLKJ.3ee40b7.gif" />
+    <Content Include="bin\x86\Debug\Page\static\img\close.89c22c4.png" />
+    <Content Include="bin\x86\Debug\Page\static\img\DH.27801c9.gif" />
+    <Content Include="bin\x86\Debug\Page\static\img\GDKW.6975f1f.gif" />
+    <Content Include="bin\x86\Debug\Page\static\img\GQGY.9e157f6.gif" />
+    <Content Include="bin\x86\Debug\Page\static\img\HDKJ.99d88ed.gif" />
+    <Content Include="bin\x86\Debug\Page\static\img\ico.829c674.gif" />
+    <Content Include="bin\x86\Debug\Page\static\img\JA.2e5a9b1.gif" />
+    <Content Include="bin\x86\Debug\Page\static\img\KWDH.8c6ba66.gif" />
+    <Content Include="bin\x86\Debug\Page\static\img\PPT.7620732.gif" />
+    <Content Include="bin\x86\Debug\Page\static\img\QWGD.cd3b6fd.gif" />
+    <Content Include="bin\x86\Debug\Page\static\img\SJ.41e5246.gif" />
+    <Content Include="bin\x86\Debug\Page\static\img\toolsIco.6d4c3f6.png" />
+    <Content Include="bin\x86\Debug\Page\static\img\toolsIco01.64ed757.png" />
+    <Content Include="bin\x86\Debug\Page\static\img\toolsIco03.a6fa22e.png" />
+    <Content Include="bin\x86\Debug\Page\static\img\TP.29c47b1.gif" />
+    <Content Include="bin\x86\Debug\Page\static\img\WK.3a9e834.gif" />
+    <Content Include="bin\x86\Debug\Page\static\img\YP.003b61a.gif" />
+    <Content Include="bin\x86\Debug\Page\static\img\ZRPD_D.e63d699.gif" />
+    <Content Include="bin\x86\Debug\Page\static\img\ZRPD_X.07fa0e7.gif" />
+    <Content Include="bin\x86\Debug\Page\static\js\app.ad87ad4fbc52441b957c.js" />
+    <Content Include="bin\x86\Debug\Page\static\js\manifest.9f721a05171225ce1161.js" />
+    <Content Include="bin\x86\Debug\Page\static\js\vendor.3612e57c9038e79b123c.js" />
+    <Content Include="DLL\ESBasic.dll" />
+    <Content Include="DLL\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="DLL\Interop.Shell32.dll" />
+    <Content Include="DLL\Microsoft.Office.Interop.PowerPoint.dll" />
+    <Content Include="DLL\NAudio.dll" />
+    <Content Include="DLL\Office.dll" />
+    <Content Include="DLL\OMCS.Boost.dll" />
+    <Content Include="DLL\OMCS.dll" />
+    <Content Include="kingsun.ico" />
+    <Content Include="Lame\lame.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Lame\lame_enc.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resource\eval\db\simple_dict.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DLL\ssound.dll" />
+    <Content Include="ssound.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Shell32">
+      <Guid>{50A7E9B0-70EF-11D1-B75A-00A0C90564FE}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\ebook\page001\sound\" />
+    <Folder Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\resource\page002\950baed5-b7de-48dc-b00b-1a14713f6628\" />
+    <Folder Include="bin\x86\Debug\Page\data\49a92e48-1f39-4382-9273-0a0d521162c6\332\resource\page006\950baed5-b7de-48dc-b00b-1a14713f6628\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\cef.redist.x64.3.2357.1287\build\cef.redist.x64.targets" Condition="Exists('..\packages\cef.redist.x64.3.2357.1287\build\cef.redist.x64.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>此项目引用这台计算机上缺少的 NuGet 程序包。使用 NuGet 程序包还原可下载这些程序包。有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\cef.redist.x64.3.2357.1287\build\cef.redist.x64.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cef.redist.x64.3.2357.1287\build\cef.redist.x64.targets'))" />
+    <Error Condition="!Exists('..\packages\cef.redist.x86.3.2357.1287\build\cef.redist.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cef.redist.x86.3.2357.1287\build\cef.redist.x86.targets'))" />
+    <Error Condition="!Exists('..\packages\CefSharp.Common.43.0.1\build\CefSharp.Common.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Common.43.0.1\build\CefSharp.Common.props'))" />
+    <Error Condition="!Exists('..\packages\CefSharp.Common.43.0.1\build\CefSharp.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Common.43.0.1\build\CefSharp.Common.targets'))" />
+    <Error Condition="!Exists('..\packages\CefSharp.WinForms.43.0.1\build\CefSharp.WinForms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.WinForms.43.0.1\build\CefSharp.WinForms.props'))" />
+  </Target>
+  <Import Project="..\packages\cef.redist.x86.3.2357.1287\build\cef.redist.x86.targets" Condition="Exists('..\packages\cef.redist.x86.3.2357.1287\build\cef.redist.x86.targets')" />
+  <Import Project="..\packages\CefSharp.Common.43.0.1\build\CefSharp.Common.targets" Condition="Exists('..\packages\CefSharp.Common.43.0.1\build\CefSharp.Common.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
